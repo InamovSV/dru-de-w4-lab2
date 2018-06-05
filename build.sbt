@@ -25,10 +25,10 @@ lazy val application =
     .settings(
       version := "0.1",
       scalaVersion := "2.12.6",
-      wartremoverErrors ++= Warts.unsafe ++ Seq(Wart.Recursion, Wart.While),
-      wartremoverExcluded += baseDirectory.value / "src" / "test" / "scala" / "Lab2Spec.scala",
-      wartremoverExcluded += baseDirectory.value / "src" / "test" / "scala" / "Lab2_0Spec.scala",
-      wartremoverExcluded += baseDirectory.value / "src" / "test" / "scala" / "Lab2_1Spec.scala",
+//      wartremoverErrors ++= Warts.unsafe ++ Seq(Wart.Recursion, Wart.While),
+//      wartremoverExcluded += baseDirectory.value / "src" / "test" / "scala" / "Lab2Spec.scala",
+//      wartremoverExcluded += baseDirectory.value / "src" / "test" / "scala" / "Lab2_0Spec.scala",
+//      wartremoverExcluded += baseDirectory.value / "src" / "test" / "scala" / "Lab2_1Spec.scala",
 
       libraryDependencies ++= Seq(
         "org.scalactic" %% "scalactic" % "3.0.5",
