@@ -42,7 +42,9 @@ class Lab2_1(db: Database) {
     (RatingTable.table
       .join(ReviewerTable.table).on(_.reviewerId === _.id)
       .map(x => (x._1.reviewStars, x._2.name)).result)
-    ) yield res.toSet.filter(x => x._1.nonEmpty && x._1.get >= 7 && x._2.nonEmpty).flatMap(_._2)
+    ) yield res.collect{
+      case (Some(s), Some(n)) => (s, n)
+    }.filter(_._1 >= 7).map(_._2).toSet
 
   /** 1.7. Write a query in Slick to find the titles of all movies that have no ratings. */
   def task7(implicit ec: ExecutionContext): Future[Set[String]] =
